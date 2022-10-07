@@ -180,15 +180,15 @@
 
   ],
   "outputs": {
-    "Web VM DNS Name": {
+    "VM-WS19HRL-Web VM DNS Name": {
       "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIpAddressName'))).dnsSettings.fqdn]",
       "type": "string"
     },
-    "Web VM Admin Username": {
+    "VM-WS19HRL-Web VM Admin Username": {
       "type": "string",
       "value": "[parameters('adminUsername')]"
     },
-    "Web VM Admin Password": {
+    "VM-WS19HRL-Web VM Admin Password": {
       "type": "string",
       "value": "[parameters('adminPassword')]"
     }
