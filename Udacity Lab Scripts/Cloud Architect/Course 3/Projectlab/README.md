@@ -10,4 +10,4 @@ For deploying this script you need to provide the following details on the scrip
 3.  Subscription ID
 4.  Tenant Name
 
-Please make sure this user account have owner access on the subscription and you Global Administrator access on Tenant.
+Please make sure this user account have owner access on the subscription and Global Administrator access on Tenant.
