@@ -12,7 +12,6 @@
   },
   "variables": {
     "subscriptionid": "[subscription().subscriptionId]",
-    "cloudlabsCommon": "[concat(' -AzureUserName ', parameters('AzureUserName'), ' -AzurePassword ', parameters('AzurePassword'), ' -AzureTenantID ', variables('AzureTenantID'), ' -AzureSubscriptionID ', variables('AzureSubscriptionID'), ' -ODLID ', parameters('ODLID'), ' -DeploymentID ', parameters('DeploymentID'),' -InstallCloudLabsShadow ', parameters('InstallCloudLabsShadow'))]",
     "AzureSubscriptionID": "[subscription().subscriptionId]",
     "AzureTenantID": "[subscription().tenantId]",
     "location": "[resourceGroup().location]",
