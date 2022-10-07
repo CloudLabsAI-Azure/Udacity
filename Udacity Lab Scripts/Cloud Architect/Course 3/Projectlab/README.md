@@ -1,4 +1,5 @@
-# Course 3 - Project lab
+# Cloud Architect Nano Degree
+## Course 3 - Project lab
 
 For deploying the the pre-requisite resources for Cloud Architect Nano Degree Course 3 Project lab, you can deploy the powershel script [psscript.ps1](https://github.com/CloudLabsAI-Azure/Udacity/blob/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/psscript.ps1) and it will create all the required resources groups and resources in your Azure subscription.
 
