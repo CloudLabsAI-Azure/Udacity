@@ -10,7 +10,6 @@
   },
   "variables": {
     "subscriptionid": "[subscription().subscriptionId]",
-    "cloudlabsCommon": "[concat(' -AzureUserName ', parameters('AzureUserName'), ' -AzurePassword ', parameters('AzurePassword'), ' -AzureTenantID ', variables('AzureTenantID'), ' -AzureSubscriptionID ', variables('AzureSubscriptionID'), ' -ODLID ', parameters('ODLID'), ' -DeploymentID ', parameters('DeploymentID'),' -InstallCloudLabsShadow ', parameters('InstallCloudLabsShadow'))]",
     "AzureSubscriptionID": "[subscription().subscriptionId]",
     "AzureTenantID": "[subscription().tenantId]",
     "location": "[resourceGroup().location]",
@@ -180,21 +179,17 @@
 
   ],
   "outputs": {
-    "Web VM DNS Name": {
+    "VM-WS16OpWeb VM DNS Name": {
       "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIpAddressName'))).dnsSettings.fqdn]",
       "type": "string"
     },
-    "Web VM Admin Username": {
+    "VM-WS16OpWeb VM Admin Username": {
       "type": "string",
       "value": "[parameters('adminUsername')]"
     },
-    "Web VM Admin Password": {
+    "VM-WS16OpWeb VM Admin Password": {
       "type": "string",
       "value": "[parameters('adminPassword')]"
-    },
-    "Suffix/DeploymentID": {
-      "type": "string",
-      "value": "[parameters('DeploymentID')]"
     }
   }
 }
