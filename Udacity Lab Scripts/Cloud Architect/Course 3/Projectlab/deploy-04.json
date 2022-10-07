@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "administratorLogin": {
+      "type": "string",
+      "metadata": {
+        "description": "The administrator username of the SQL logical server."
+      }
+    },
+    "administratorLoginPassword": {
+      "type": "securestring",
+      "metadata": {
+        "description": "The administrator password of the SQL logical server."
+      }
+    }
+  },
+  "variables": {
+    "serverName": "[concat('sql-devdata-',uniqueString(resourceGroup().id))]",
+    "sqlDBName": "[concat('DB-development-',uniqueString(resourceGroup().id))]"
+
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Sql/servers",
+      "apiVersion": "2020-02-02-preview",
+      "name": "[variables('serverName')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "administratorLogin": "[parameters('administratorLogin')]",
+        "administratorLoginPassword": "[parameters('administratorLoginPassword')]"
+      },
+      "resources": [
+        {
+          "type": "databases",
+          "apiVersion": "2020-08-01-preview",
+          "name": "[variables('sqlDBName')]",
+          "location": "[resourceGroup().location]",
+          "sku": {
+            "name": "Basic",
+            "tier": "Basic"
+          },
+          "dependsOn": [
+            "[resourceId('Microsoft.Sql/servers', concat(variables('serverName')))]"
+          ]
+        }
+      ]
+    }
+  ]
+}
