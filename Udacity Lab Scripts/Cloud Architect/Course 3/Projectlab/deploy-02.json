@@ -35,7 +35,7 @@
           "type": "databases",
           "apiVersion": "2020-08-01-preview",
           "name": "[variables('sqlDBName')]",
-          "location": "[parameters('location')]",
+          "location": "[resourceGroup().location]",
           "sku": {
             "name": "Basic",
             "tier": "Basic"
