@@ -4,9 +4,10 @@ Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
 Install-Module AzureAD -Force
 
 #Provide the below values
-$AzureUserName="<Provide your username here>"
-$AzurePassword="<Provide your Password here>"
-$AzureSubscriptionID="<Provide Azure Subscription ID here>"
+$AzureUserName="Provide the Azure UserName here"
+$AzurePassword="Provide the Azure Password here"
+$AzureSubscriptionID="Provide the subscription ID here"
+$domainName = "Provide the tenant name here"
 
 #Connect to the user account
 $userName = $AzureUserName
@@ -14,9 +15,8 @@ $password = $AzurePassword
 $securePassword = $password | ConvertTo-SecureString -AsPlainText -Force
 $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $userName, $SecurePassword
 
-
-Connect-AzureAD -Credential $cred | Out-Null
-
+Connect-AzAccount -Credential $cred
+Connect-AzureAD -Credential $cred 
 
 Set-AzContext -SubscriptionId $AzureSubscriptionID
 
@@ -38,39 +38,28 @@ New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName rg-prod
 
 New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName rg-hrlegal `
   -TemplateUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deploy-01.json' `
-  -TemplateParameterUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deployvm.parameters.json' `
-  -Location 'Central US'
+  -TemplateParameterUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deployvm.parameters.json'
 
 New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName rg-operations `
   -TemplateUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deploy-07.json' `
-  -TemplateParameterUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deployvm.parameters.json' `
-  -Location 'Central US'
+  -TemplateParameterUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deployvm.parameters.json' 
 
 New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName rg-data `
   -TemplateUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deploy-02.json' `
-  -TemplateParameterUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deploysql.parameters.json' `
-  -Location 'Central US'
+  -TemplateParameterUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deploysql.parameters.json' 
 
 New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName rg-dev `
   -TemplateUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deploy-03.json' `
-  -TemplateParameterUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deployvm.parameters.json' `
-  -Location 'Central US'
+  -TemplateParameterUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deployvm.parameters.json' 
+ 
 
 New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName rg-devdata `
   -TemplateUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deploy-04.json' `
-  -TemplateParameterUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deploysql.parameters.json' `
-  -Location 'Central US'
-
-
-#Install-Module AzureAD -Force
-
-#Install-Module AzureADPreview -Scope CurrentUser -Force -AllowClobber
-
-
+  -TemplateParameterUri 'https://raw.githubusercontent.com/CloudLabsAI-Azure/Udacity/main/Udacity%20Lab%20Scripts/Cloud%20Architect/Course%203/Projectlab/deploysql.parameters.json' 
 
 #creating azure ad users
 
-$domainName = $AzureUserName.Split("@")[1]
+
 $tomusername = 'Tom@'+$domainName
 $andrew = 'Andrew@'+$domainName
 $srinadh = 'Srinadh@'+$domainName
@@ -91,8 +80,6 @@ $Seth = 'Seth@'+$domainName
 $Lora = 'Lora@'+$domainName
 $Winifred = 'Winifred@'+$domainName
 $Michael = 'Michael@'+$domainName
-
-
 
 
 $PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
@@ -145,15 +132,15 @@ Start-Sleep -s 60
 #Downsizing Backup storage redundancy
 
 
-$rgdataDB="DB-operations-"+$DeploymentID
-$rgdataDBServer="sql-proddata-"+$DeploymentID
-$rgdevdataDB="DB-development-"+$DeploymentID
-$rgdevdataDBServer="sql-devdata-"+$DeploymentID
+#$rgdataDB="DB-operations-"+$DeploymentID
+#$rgdataDBServer="sql-proddata-"+$DeploymentID
+#$rgdevdataDB="DB-development-"+$DeploymentID
+#$rgdevdataDBServer="sql-devdata-"+$DeploymentID
 
 
-Set-AzSqlDatabase -ResourceGroupName "rg-data" -DatabaseName $rgdataDB -ServerName $rgdataDBServer -BackupStorageRedundancy Local
+#Set-AzSqlDatabase -ResourceGroupName "rg-data" -DatabaseName $rgdataDB -ServerName $rgdataDBServer -BackupStorageRedundancy Local
 
-Set-AzSqlDatabase -ResourceGroupName "rg-devdata" -DatabaseName $rgdevdataDB -ServerName $rgdevdataDBServer -BackupStorageRedundancy Local
+#Set-AzSqlDatabase -ResourceGroupName "rg-devdata" -DatabaseName $rgdevdataDB -ServerName $rgdevdataDBServer -BackupStorageRedundancy Local
 
 
 $rgName1='rg-core'
