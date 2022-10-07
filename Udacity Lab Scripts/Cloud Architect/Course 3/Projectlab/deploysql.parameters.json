@@ -7,11 +7,6 @@
     },
     "administratorLoginPassword": {
       "value": "Password.!!1"
-    },
-
-    "DeploymentID": {
-      "value": "GET-DEPLOYMENT-ID"
     }
-
   }
 }
