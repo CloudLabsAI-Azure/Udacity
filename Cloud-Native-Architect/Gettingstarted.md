@@ -1,21 +1,19 @@
 # Getting Started with Lab
 
-1. Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the the lab.
+1. Once the environment is provisioned, a virtual machine and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the the lab.
 
 
-2. To get the lab environment details, you can select **Lab Environment** tab. 
+2. To get the lab environment details, you can select **Environment Details** tab. 
 
-   ![](images/udacity-01.png "Lab Environment")
+   ![](images/env-details.jpg "Lab Environment details")
  
 
 ## Resource Start/Stop
 
-If your environment is stopped due to inactivity feature, please follow the below steps to start the resources: 
+Please follow the below steps to start/stop the VM: 
 
-1. Please go to the Lab environment details provided in the right side of the environment and select Lab Resources
+1. To start/restart/stop the VM, please go to the **Resources** tab and click on the appropriate buttons.
 
-   ![](images/cand-01.png "Lab Environment tab")
+   ![](images/reosurces-tab.jpg "Resources tab")
    
-2. In Lab Resources, please select the start all virtual machines button to start the resources
 
-   ![](images/cand-02.png "Resources Tab")
