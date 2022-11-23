@@ -1,6 +1,6 @@
 # Getting Started with Lab
 
-1. Once the environment is provisioned, a virtual machine and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the the lab.
+1. The cloud lab (virtual machine) is a **sandbox environment** and thus has a limited session duration, as shown near the header above. Use this cloud lab to do **all exercises and the project in this course**. Read the **Terms of Use** on the preceding page to acknowledge the features and restrictions of using this machine.
 
 
 2. To get the lab environment details, you can select **Environment Details** tab. 
