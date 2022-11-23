@@ -3,14 +3,14 @@
 1. Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the the lab.
 1. To get the lab environment details, you can select **Lab Environment** tab. 
 
-   ![](images/labenv.PNG "Lab Environment")
+   ![](images/25.png "Lab Environment")
  
  
  
 ## Login to Azure Portal
 1. In the JumpVM, click on Azure portal shortcut of Microsoft Edge browser which is created on desktop.
 
-   ![azure portal.](images/labg.PNG)
+   ![azure portal.](images/26.png)
    
 1. When you click on Azure portal, edge browser welcome screen will come up, select **Get started**.
 
@@ -50,6 +50,6 @@
    
 1. Confirm you have all resource group are present as shown below.
 
-   ![](images/res.PNG "Resource groups")
+   ![](images/27.png "Resource groups")
    
 1. Now, click on the **Resource group** 
