@@ -52,4 +52,4 @@
 
    ![](images/udacity-03.png "Resource groups")
    
-1. Now, click on the **Resource group** and select your machine learning workspace
+1. Now, click on the **Resource group** and select your machine learning workspace (if any present).
