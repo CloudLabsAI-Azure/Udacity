@@ -18,39 +18,39 @@
     
 ## How to Connect to Kali Internal Linux via RDP
 
-1. Search for Remote Desktop Connection 
-
-2. Select the **Remote Desktop Connection** App
-   
-   ![](images/rdp.png "Lab environment")
-
-3. Enter the public IP address of your device.
-
-   ![](images/connect.png "Lab environment")
-
-4. Click on **Connect** > **Yes** 
-   
-   ![](images/yes.png "Lab environment")
-
-5. Enter your credentials via **XRDP**
-   
-   ![](images/xrdp.png "Lab environment")
-
-5. Click **Ok**
-
-6. You should now have access
-   
-   ![](images/details-1.png "Lab environment")
-
-## How to connect to DMZIServer via RDP
-
-1. Search for Remote Desktop Connection. 
+1. Search for **Remote Desktop Connection**. 
 
 2. Select the **Remote Desktop Connection** App.
    
    ![](images/rdp.png "Lab environment")
 
-3. Enter the public IP address of your device.
+3. Enter the DNS Name of your VM.
+
+   ![](images/connect.png "Lab environment")
+
+4. Click on **Connect** > **Yes**. 
+   
+   ![](images/yes.png "Lab environment")
+
+5. Enter your credentials via **XRDP**.
+   
+   ![](images/xrdp.png "Lab environment")
+
+5. Click **Ok**.
+
+6. You should now have access to your VM.
+   
+   ![](images/details-1.png "Lab environment")
+
+## How to connect to DMZIServer via RDP
+
+1. Search for **Remote Desktop Connection**. 
+
+2. Select the **Remote Desktop Connection** App.
+   
+   ![](images/rdp.png "Lab environment")
+
+3. Enter the DNS Name of your VM.
 
 4. Click on **Connect**.
 
@@ -62,7 +62,7 @@
 
 6. Enter your credentials.
 
-7. Click on **Ok** > **Yes**
+7. Click on **Ok** > **Yes**.
 
    ![](images/userpass.png "Lab environment")
 
