@@ -10,9 +10,13 @@
 1. You can use the DNS Name to RDP to the following machines:
 
     * Kali Internal
+    * DMZIServer
+    * Debianx64DMZCLoudNew
+
     
 1. You can use the DNS Name to SSH to the following machines:
-   
+    
+    * Kali Internal
     * DMZIServer
     * Debianx64DMZCLoudNew
     
